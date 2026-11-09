@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+packages = ["nptel_ai_course"]
+
+[project]
+name = "nptel_ai_course"
+version = "0.1.0"
+description = "A place to practise nptel ai course and algorithm in python"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [
+  { name = "Prithvi singh", email = "prithvisinghtewatia@gmail.com" }
+]
+dependencies = [
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest==9.2.0",
+  "ruff==0.17.4",
+  "pre-commit==4.7.0"
+]
+
+
+[tool.ruff]
+# Target python version
+target-version = "py312"
+# Set the maximum line length
+line-length = 80
+
+[tool.ruff.lint]
+# Configure specific rule categories
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # Pyflakes (general logic bugs)
+    "I",   # isort (automatically sorts import statements)
+    "B",   # flake8-bugbear (common design pitfalls)
+    "UP",  # pyupgrade (forces modern syntax upgrades)
+]
+
+ignore = [
+    "E501", # Ignore line length violations (handled by ruff-format)
+]
+
+[tool.ruff.lint.isort]
+# Combines multiple imports from the same module into one line
+combine-as-imports = true
